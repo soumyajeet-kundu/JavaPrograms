@@ -1,31 +1,55 @@
 import java.util.*;
-public class factorial {
-    public static void main(String[] args) {
-        int fact, num[], n, res=1, rem;
-        System.out.println("Enter a number to check factorial : ");
-        Scanner sc = new Scanner(System.in);
-        fact = sc.nextInt();
-        if(fact < 0){
-            System.out.println("the number can't be negative");
-        }
-        else if(fact > 32767){
-            System.out.println("the number can't be negative");
-        }
-        else{
-            do{
-                
+public class factorial
+{
+	public static void main(String[] args) {
+		int n;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number");
+		n=sc.nextInt();
+		digitFactorial(n);
+		
+	}
+static	void digitFactorial(int n)
+	{
+	    
+	    int a[]=new int[5];
+	    if(n>32767)
+	    {
+	        System.out.println("Number too large");
+	  
+	    }
+	    else if(n<0)
+	    {
+	        System.out.println("number too short");
+	    }
+	    else
+	    {
+	     int t=n;
+	     int rev=0;
+	    
+	        while(t != 0) 
+	        {
+            int digit = t% 10;
+            rev= rev * 10 + digit;
+            t /= 10;
             }
-            rem = fact/10;
-            n = fact % 10;
-            for(int i=1; i<=n ;i++){    
-                res=res*i;    
-            }
-            rem = rem/10;
-            n = fact % 10;
-            for(int i=1; i<=n ;i++){    
-                res=res*i;    
-            }
-        }
-        System.out.println(res+ " ");
-    }
+
+         while(rev!=0)
+         {
+             int k=rev%10;
+             int p=0;
+             for(int i=k-1;i>0;i--)
+             {
+                k=k*i;
+                 
+             }
+             a[p]=k;
+              System.out.println(a[p]);
+              p++;
+             rev=rev/10;
+             
+         }
+	     
+	    }
+	}
 }
