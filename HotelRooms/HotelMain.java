@@ -33,7 +33,7 @@ public class HotelMain {
                 b2 = false;
             }
             deluxeRoom dr = new deluxeRoom(hName, area, b, b2);
-            dr.rateCalculatorDR();
+            
         }
 
         else if(no==2){
@@ -59,7 +59,6 @@ public class HotelMain {
                 b2 = false;
             }
             DeluxeAc dac = new DeluxeAc(hName, area, b, b2);
-            dac.rateCalculatorDR();
         }
 
         else if(no==3){
@@ -85,7 +84,6 @@ public class HotelMain {
                 b2 = false;
             }
             suiteAc sac = new suiteAc(hName, area, b, b2);
-            sac.rateCalculatorDR();
         }
         else{
             System.out.println("invalid input");
